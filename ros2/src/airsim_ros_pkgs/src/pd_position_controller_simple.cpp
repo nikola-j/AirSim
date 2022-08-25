@@ -105,7 +105,7 @@ void PIDPositionController::check_reached_goal()
 {
     double diff_xyz = sqrt((target_position_.x - curr_position_.x) * (target_position_.x - curr_position_.x) + (target_position_.y - curr_position_.y) * (target_position_.y - curr_position_.y) + (target_position_.z - curr_position_.z) * (target_position_.z - curr_position_.z));
 
-    double diff_yaw = math_common::angular_dist(target_position_.yaw, curr_position_.yaw);
+    double diff_yaw = std::abs(math_common::angular_dist(target_position_.yaw, curr_position_.yaw));
 
     // todo save this in degrees somewhere to avoid repeated conversion
     if (diff_xyz < params_.reached_thresh_xyz && diff_yaw < math_common::deg2rad(params_.reached_yaw_degrees))
