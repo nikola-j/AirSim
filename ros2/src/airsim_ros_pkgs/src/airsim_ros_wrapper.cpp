@@ -442,8 +442,13 @@ bool AirsimROSWrapper::reset_srv_cb(std::shared_ptr<airsim_interfaces::srv::Rese
     unused(request);
     unused(response);
     std::lock_guard<std::mutex> guard(control_mutex_);
-
     airsim_client_->reset();
+
+    for (const auto& vehicle_name_ptr_pair : vehicle_name_ptr_map_) {
+        airsim_client_->enableApiControl(true, vehicle_name_ptr_pair.first);
+        airsim_client_->armDisarm(true, vehicle_name_ptr_pair.first);
+    }
+
     return true; //todo
 }
 
