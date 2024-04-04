@@ -64,9 +64,9 @@ Visualization Manager:
           Value: true
         front_camera_optical/static:
           Value: true
-        world_enu:
+        odom:
           Value: false
-        world_ned:
+        odom_ned:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -74,7 +74,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        world_ned:
+        odom_ned:
           SimpleFlight:
             SimpleFlight/odom_local_ned:
               SimpleFlight/LidarCustom:
@@ -87,7 +87,7 @@ Visualization Manager:
               {}
             front_camera_optical:
               {}
-          world_enu:
+          odom:
             {}
       Update Interval: 0
       Value: true
@@ -198,7 +198,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world_enu
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:

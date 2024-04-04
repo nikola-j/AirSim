@@ -636,7 +636,7 @@ nav_msgs::msg::Odometry AirsimROSWrapper::convert_odom_to_enu(const nav_msgs::ms
     nav_msgs::msg::Odometry odom_msg;
 
     odom_msg.header.stamp = original_odom_msg.header.stamp;
-    odom_msg.header.frame_id = "world_enu";
+    odom_msg.header.frame_id = "odom";
 
     odom_msg.pose.pose.position.x = original_odom_msg.pose.pose.position.x;
     odom_msg.pose.pose.position.y = original_odom_msg.pose.pose.position.y;

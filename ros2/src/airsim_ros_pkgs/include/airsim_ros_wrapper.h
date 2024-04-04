@@ -331,7 +331,7 @@ private:
     GimbalCmd gimbal_cmd_;
 
     /// ROS tf
-    const std::string AIRSIM_FRAME_ID = "world_ned";
+    const std::string AIRSIM_FRAME_ID = "odom_ned";
     std::string world_frame_id_ = AIRSIM_FRAME_ID;
     const std::string AIRSIM_ODOM_FRAME_ID = "odom_local_ned";
     const std::string ENU_ODOM_FRAME_ID = "odom_local_enu";
